@@ -62,6 +62,10 @@ The use case is Kenyan malaria burden and prevention analysis at county level. P
 
 The selected principal components preserve broad information such as malaria pressure, prevention coverage, and spending intensity. The main tradeoff is that reducing dimensions compresses exact county-level details from individual indicators.
 
+## Challenges and Lessons Learned
+
+During this project, we learned that implementing PCA from scratch requires careful handling of missing values, proper standardization, and correct sorting of eigenvalues and eigenvectors. We also understood the importance of dimensionality reduction in simplifying complex health datasets while preserving meaningful information.
+
 ## Notes for Submission
 
 The final interpretation paragraphs in the notebook should be reviewed and rewritten by the group in your own words before submission, especially because the assignment explicitly asks students to avoid AI-generated interpretations.
