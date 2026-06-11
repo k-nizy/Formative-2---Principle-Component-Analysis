@@ -2,6 +2,9 @@
 
 This repository contains the completed PCA formative assignment notebook built from the provided template. The analysis uses Kenyan county-level malaria data from the Humanitarian Data Exchange (HDX), then implements Principal Component Analysis from scratch with NumPy only.
 
+## Github Repository:  https://github.com/k-nizy/Formative-2---Principle-Component-Analysis.git
+
+
 ## Main Deliverable
 
 - `Completed_PCA_Formative_Kenya_Malaria_HDX.ipynb`
