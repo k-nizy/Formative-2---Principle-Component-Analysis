@@ -1,6 +1,6 @@
 # Kenya Malaria PCA Formative Assignment
 
-This repository contains the completed PCA formative assignment notebook built from the provided template. The analysis uses Kenyan county-level malaria data from the Humanitarian Data Exchange (HDX), then implements Principal Component Analysis from scratch with NumPy.
+This repository contains the completed PCA formative assignment notebook built from the provided template. The analysis uses Kenyan county-level malaria data from the Humanitarian Data Exchange (HDX), then implements Principal Component Analysis from scratch with NumPy only.
 
 ## Main Deliverable
 
@@ -18,6 +18,13 @@ HDX resources used:
 - Kenya expenditure on malaria per capita per county: `kenya_malaria_spending_county.csv`
 - Kenya bed nets, malaria/fever occurrence, and health spending per county: `kenya_malaria_bednets_county.csv`
 
+## How to Run
+1. Open Completed_PCA_Formative_Kenya_Malaria_HDX.ipynb in Google Colab or Jupyter.
+2. Run all cells from top to bottom.
+3. Confirm that all outputs are visible: data previews, covariance matrix, eigenvalues, explained variance, benchmarking results, and both plots.
+4. Export the notebook as a PDF.
+5. Combine the notebook PDF and task_sheet.pdf into one final PDF for submission.
+
 Source pages:
 
 - https://data.humdata.org/dataset/malaria-cases-per-100-000-people-in-kenya
@@ -28,15 +35,15 @@ The merged analysis table includes county name, country, malaria cases per 100,0
 
 ## Assignment Checklist
 
-- Africanized dataset: Kenya county-level malaria data from HDX.
-- Minimum seven columns: the merged dataset has more than seven columns.
-- Missing values: the HDX cases file contains missing/blank values, and the notebook counts and handles them before PCA.
-- Non-numeric data: county, country, and malaria burden group are identified; categorical features are handled before PCA.
-- PCA from scratch: covariance, eigendecomposition, eigenvalue sorting, explained variance, and projection are implemented with NumPy.
-- Dynamic component selection: the notebook selects the smallest number of components that retains at least 90% explained variance.
-- Benchmarking: the notebook includes a vectorized PCA function and runtime comparison on the original and repeated larger dataset.
-- Visualization: the notebook plots original feature space and PCA space after transformation.
-- No sklearn: sklearn is not used.
+- Africanized dataset (Kenya county-level malaria data from HDX)
+- Minimum seven columns
+- Missing values present and handled
+- Non-numeric columns identified and handled
+- PCA implemented from scratch with NumPy (no sklearn)
+- Dynamic component selection based on explained variance
+- Benchmarking included
+- Before and after PCA visualizations included
+- Group contribution/task sheet PDF in repository
 
 ## Files
 
@@ -47,14 +54,6 @@ The merged analysis table includes county name, country, malaria cases per 100,0
 - `kenya_malaria_bednets_county.csv`: HDX bed-net/malaria/fever resource.
 - `README.md`: project documentation.
 
-## How to Run
-
-1. Open `Completed_PCA_Formative_Kenya_Malaria_HDX.ipynb`.
-2. Run all cells from top to bottom.
-3. Verify that data previews, covariance output, eigenvalues, explained variance output, benchmarking output, and both plots are visible.
-4. Export the notebook as a PDF.
-5. Add the completed group contribution/task sheet PDF to the repository.
-6. Combine the notebook PDF and task sheet PDF into one final PDF as required by the assignment.
 
 ## PCA Use Case
 
@@ -65,6 +64,21 @@ The selected principal components preserve broad information such as malaria pre
 ## Challenges and Lessons Learned
 
 During this project, we learned that implementing PCA from scratch requires careful handling of missing values, proper standardization, and correct sorting of eigenvalues and eigenvectors. We also understood the importance of dimensionality reduction in simplifying complex health datasets while preserving meaningful information.
+
+## PCA Implementation Summary
+
+Data Handling
+
+Missing values in the HDX cases file are counted and handled before PCA is applied. Non-numeric columns (county name, country, malaria burden group) are identified and excluded from the numerical 
+pipeline before standardization.
+
+Component Selection
+
+Components were selected using a 90% explained variance threshold — the smallest number of principal components whose cumulative explained variance reaches or exceeds 90%.
+
+This threshold was chosen because the dataset captures related but overlapping public health indicators (spending, bed-net coverage, case rates, fever occurrence). A 90% cutoff retains the dominant patterns overall malaria pressure and prevention coverage intensity without keeping noise from weakly correlated indicators.
+
+Tradeoff: By reducing to fewer components, we lose the ability to distinguish between counties that differ only on secondary indicators. For example, two counties with similar malaria case rates but very different bed-net coverage or spending levels may appear close together in PCA space even though their prevention situations are meaningfully different. Fine-grained county comparisons based on individual indicators are not possible from the reduced representation alone.
 
 ## Notes for Submission
 
