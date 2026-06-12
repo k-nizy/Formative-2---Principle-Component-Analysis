@@ -83,7 +83,8 @@ This threshold was chosen because the dataset captures related but overlapping p
 
 Tradeoff: By reducing to fewer components, we lose the ability to distinguish between counties that differ only on secondary indicators. For example, two counties with similar malaria case rates but very different bed-net coverage or spending levels may appear close together in PCA space even though their prevention situations are meaningfully different. Fine-grained county comparisons based on individual indicators are not possible from the reduced representation alone.
 
-## Notes for Submission
+## Team task sheet
 
-The final interpretation paragraphs in the notebook should be reviewed and rewritten by the group in your own words before submission, especially because the assignment explicitly asks students to avoid AI-generated interpretations.
+[BSE Group Assignments _ Task Sheet_[Formative2_Principle Component Analysis_Cohort 3_Team65] - 1.pdf](https://github.com/user-attachments/files/28895161/BSE.Group.Assignments._.Task.Sheet_.Formative2_Principle.Component.Analysis_Cohort.3_Team65.-.1.pdf)
+
 
